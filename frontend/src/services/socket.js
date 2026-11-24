@@ -1,8 +1,8 @@
-import {io} from "socket.io-client";
+import { io } from "socket.io-client";
 
-const SERVER_URL = "http://192.168.0.111:5000";
+const SERVER_URL = import.meta.env.VITE_SERVER_URL;
 
-
-export const socket = io(SERVER_URL,{
-    autoConnect: false
-})
+export const socket = io(SERVER_URL, {
+  autoConnect: false,
+  transports: ["websocket"]
+});
